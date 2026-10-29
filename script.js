@@ -4,7 +4,12 @@
 
 // Step 1: live text (name, job, email, bio -> card), trimmed, default text when empty
 const input = document.getElementsByTagName("input");
+const button = document.getElementsByTagName("button");
 const textarea = document.getElementsByTagName("textarea");
+const select=document.getElementsByTagName("select");
+const body=document.getElementsByTagName("body");
+
+
 
 const cardName= document.getElementById("card-name");
 const cardJob =document.getElementById("card-job");
@@ -14,7 +19,7 @@ const avatar =document.getElementById("avatar");
 const bioLeft =document.getElementById("bio-left");
 const counter =document.getElementsByClassName("counter");
 
-
+const card=document.getElementById("card");
 
 input[0].addEventListener("keyup", function(event) {
     console.log(event.target.value);
@@ -45,9 +50,22 @@ textarea[0].addEventListener("keyup", function(event) {
 
 
 // Step 4: accent color (card border + avatar background)
-
+select[0].onchange=function(event) {
+    console.log(event.target.value);
+    card.style.borderColor=event.target.value;
+    avatar.style.backgroundColor=event.target.value;
+};
 // Step 5: dark mode button
+button[0].addEventListener("click", function(event) {
+    console.log(event.target.value);
+  body[0].classList.add("dark");
+});
+
 
 // Step 6: reset button
+button[1].addEventListener("click", function(event) {
+    console.log(event.target.value);
+  body[0].classList.remove("dark");
+});
 
 //
